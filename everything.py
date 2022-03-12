@@ -1,5 +1,5 @@
 # Simple pygame program
-
+# Demo: test Github push
 # Import and initialize the pygame library
 import pygame
 pygame.init()
@@ -20,7 +20,7 @@ while running:
     screen.fill((255, 255, 255))
 
     # Draw a solid blue circle in the center
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+    pygame.draw.circle(screen, (152, 3, 252), (250, 250), 75)
 
     # Flip the display
     pygame.display.flip()
