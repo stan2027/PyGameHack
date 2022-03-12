@@ -1,5 +1,5 @@
 # Simple pygame program
-# Demo: test Github push
+# Demo: here is Mazui
 # Import and initialize the pygame library
 import pygame
 pygame.init()
