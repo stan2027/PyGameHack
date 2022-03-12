@@ -3,12 +3,13 @@ from pygame.locals import *
 import os
 import random
 
+# Define colors in RGB
 RED = (255, 0, 0)
 GRAY = (150, 150, 150)
 WHITE = (255, 255, 255)
 
 pygame.init()
-w, h = 1000, 1000
+w, h = 1000, 1000 # Width, Height
 screen = pygame.display.set_mode((w, h))
 running = True
 
@@ -16,10 +17,7 @@ running = True
 asset_dir = "assets/images/"
 all_image_filenames = list(os.listdir('assets/images/'))
 all_images = [pygame.image.load(asset_dir+filename) for filename in all_image_filenames]
-my_font = pygame.font.SysFont('ubuntumono.ttf', 50)
-
-def process_name(filename): # convert filename into human readable animal name
-    return " ".join(filename.split('_'))
+my_font = pygame.font.SysFont('ubuntumono.ttf', 50) # Define a font for the game
     
 
 def setup_quiz():
@@ -36,7 +34,14 @@ def setup_quiz():
     wrong_name_img = my_font.render(wrong_name, True, GRAY)
     return img, right_name_img, wrong_name_img
 
-def get_rect(_img, x, y):
+
+def process_name(filename): # Convert filename into human readable animal name
+    name = filename
+    if filename.endswith('.png'):
+        name = filename[:-5]
+    return " ".join(name.split('_'))
+
+def get_rect(_img, x, y): # Get the rect representation of an image and set its center coordinate
     _rect = _img.get_rect()
     _rect.center = x, y
     return _rect
